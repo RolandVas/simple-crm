@@ -1,0 +1,34 @@
+<mat-card class="user-detail-head">
+  <button mat-icon-button class="user-option" [matMenuTriggerFor]="user" >
+    <mat-icon>more_vert</mat-icon>
+  </button>
+  <mat-menu #user="matMenu">
+    <button mat-menu-item (click)="openDialogUser()">Edit</button>
+  </mat-menu>
+
+
+    <img src="./assets/img/user.png" >
+    <div class="user-detail-profil">
+        <h2>{{ User.firstName }} {{ User.lastName }}</h2>
+        {{ User.email }}
+    </div>
+</mat-card>
+
+
+
+
+<mat-card class="example-card mr-t32">
+
+  <button mat-icon-button class="user-option" [matMenuTriggerFor]="address" >
+    <mat-icon>more_vert</mat-icon>
+  </button>
+  <mat-menu #address="matMenu">
+    <button mat-menu-item (click)="openDialogAddress()">Edit</button>
+  </mat-menu>
+
+    <mat-card-title>Address</mat-card-title>
+    <mat-card-content>
+      <p>{{ User.street }}<br>
+        {{ User.zipCode }} {{ User.city }}</p>
+    </mat-card-content>
+  </mat-card>

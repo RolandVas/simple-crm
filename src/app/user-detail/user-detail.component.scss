@@ -1,0 +1,29 @@
+.user-detail-head {
+    height: 350px;
+    display: flex;
+    align-items: flex-end;
+
+    img {
+        height: 100px;
+        border-radius: 100%;
+        margin-right: 16px;
+    }
+}
+
+.user-detail-profil {
+    height: 100px;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: center;
+
+    h2 {
+        margin-bottom: 8px;
+    }
+}
+
+.user-option {
+    position: absolute;
+    top: 0;
+    right: 0;
+}

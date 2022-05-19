@@ -18,13 +18,29 @@ import {MatInputModule} from '@angular/material/input';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { FormsModule } from '@angular/forms';
+import { AngularFireModule } from '@angular/fire/compat';
+import { environment } from '../environments/environment';
+import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
+import { provideDatabase,getDatabase } from '@angular/fire/database';
+import { provideFirestore,getFirestore } from '@angular/fire/firestore';
+import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
+import {MatProgressBarModule} from '@angular/material/progress-bar';
+import { AutocompleteLibModule } from 'angular-ng-autocomplete';
+import {MatCardModule} from '@angular/material/card';
+import { UserDetailComponent } from './user-detail/user-detail.component';
+import {MatMenuModule} from '@angular/material/menu';
+import { DialogEditAddressComponent } from './dialog-edit-address/dialog-edit-address.component';
+import { DialogEditUserComponent } from './dialog-edit-user/dialog-edit-user.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     DashboardComponent,
     UserComponent,
-    DialogAddUserComponent
+    DialogAddUserComponent,
+    UserDetailComponent,
+    DialogEditAddressComponent,
+    DialogEditUserComponent
   ],
   imports: [
     BrowserModule,
@@ -33,14 +49,23 @@ import { FormsModule } from '@angular/forms';
     MatToolbarModule,
     MatIconModule,
     MatSidenavModule,
+    MatCardModule,
+    MatMenuModule,
     MatButtonModule,
     MatTooltipModule,
     MatDialogModule,
+    AngularFirestoreModule,
     MatFormFieldModule,
     MatInputModule,
     MatDatepickerModule,
     MatNativeDateModule,
-    FormsModule
+    AutocompleteLibModule,
+    MatProgressBarModule,
+    FormsModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    provideFirebaseApp(() => initializeApp(environment.firebase)),
+    provideDatabase(() => getDatabase()),
+    provideFirestore(() => getFirestore())
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -3,3 +3,35 @@
     right: 56px;
     bottom: 56px;
 }
+
+.user-table{
+    width: 100%;
+    border-collapse: collapse;
+    th {
+        text-align: start;
+        color: rgba(0, 0, 0, 0.5);
+        
+    }
+
+    tr {
+        border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+        cursor: pointer;
+        &:hover{
+            background-color: rgba(0, 0, 0, 0.04);
+        }
+        &:first-child {
+            cursor: unset;
+            &:hover{
+                background-color: unset;
+            }
+        }
+
+        &:last-child {
+            border-bottom: 0;
+        }
+    }
+
+    td {
+        height: 48px;
+    }
+}
