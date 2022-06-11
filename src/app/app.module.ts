@@ -31,6 +31,8 @@ import { UserDetailComponent } from './user-detail/user-detail.component';
 import {MatMenuModule} from '@angular/material/menu';
 import { DialogEditAddressComponent } from './dialog-edit-address/dialog-edit-address.component';
 import { DialogEditUserComponent } from './dialog-edit-user/dialog-edit-user.component';
+import { ReactiveFormsModule } from '@angular/forms'; 
+
 
 @NgModule({
   declarations: [
@@ -49,6 +51,7 @@ import { DialogEditUserComponent } from './dialog-edit-user/dialog-edit-user.com
     MatToolbarModule,
     MatIconModule,
     MatSidenavModule,
+    ReactiveFormsModule,
     MatCardModule,
     MatMenuModule,
     MatButtonModule,

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { MatDialog } from '@angular/material/dialog';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { user } from 'src/models/user.class';
 import { DialogEditAddressComponent } from '../dialog-edit-address/dialog-edit-address.component';
 import { DialogEditUserComponent } from '../dialog-edit-user/dialog-edit-user.component';
@@ -17,7 +17,7 @@ export class UserDetailComponent implements OnInit {
   User: user = new user(); /* mit objektorientiert */
   // user: any = {}; /* ohne objektorientierung */
 
-  constructor(private route: ActivatedRoute, private firestore: AngularFirestore, public dialog: MatDialog) { }
+  constructor(private route: ActivatedRoute, private firestore: AngularFirestore, public dialog: MatDialog, private router: Router) { }
 
   /**
    * get USER ID from URL
@@ -44,17 +44,21 @@ export class UserDetailComponent implements OnInit {
     })
   }
 
-
-
-  openDialogAddress() {
-    const dialog = this.dialog.open(DialogEditAddressComponent);
-    dialog.componentInstance.User = new user(this.User.toJSON()); /* so kann man eine kopie von einem objekt erstellen = new user(this.User.toJSON()) */
-    dialog.componentInstance.UserID = this.userID;
+  deleteUser() {
+    this.firestore
+    .collection('user')
+    .doc(this.userID)
+    .delete()
+    .then(() => {
+      this.router.navigateByUrl('/user')
+    })
   }
+
+
 
   openDialogUser() {
     const dialog = this.dialog.open(DialogEditUserComponent)
-    dialog.componentInstance.User = new user(this.User.toJSON());
+    dialog.componentInstance.User = new user(this.User.toJSON()); /* so kann man eine kopie von einem objekt erstellen = new user(this.User.toJSON()) */
     dialog.componentInstance.UserID = this.userID;
   }
 

@@ -4,6 +4,7 @@
   </button>
   <mat-menu #user="matMenu">
     <button mat-menu-item (click)="openDialogUser()">Edit</button>
+    <button mat-menu-item class="delete" (click)="deleteUser()">Delete User</button>
   </mat-menu>
 
 
@@ -18,17 +19,18 @@
 
 
 <mat-card class="example-card mr-t32">
-
-  <button mat-icon-button class="user-option" [matMenuTriggerFor]="address" >
-    <mat-icon>more_vert</mat-icon>
-  </button>
-  <mat-menu #address="matMenu">
-    <button mat-menu-item (click)="openDialogAddress()">Edit</button>
-  </mat-menu>
-
     <mat-card-title>Address</mat-card-title>
     <mat-card-content>
       <p>{{ User.street }}<br>
         {{ User.zipCode }} {{ User.city }}</p>
+    </mat-card-content>
+  </mat-card>
+
+  <mat-card class="example-card mr-t32">
+    <mat-card-title>Comment</mat-card-title>
+    <mat-card-content>
+      <p>
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quas in repellat, consectetur quidem amet vitae blanditiis aut obcaecati assumenda nobis nihil dicta earum labore magnam fugit, quos provident culpa hic!
+      </p>
     </mat-card-content>
   </mat-card>
