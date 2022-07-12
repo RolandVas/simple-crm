@@ -31,7 +31,13 @@ import { UserDetailComponent } from './user-detail/user-detail.component';
 import {MatMenuModule} from '@angular/material/menu';
 import { DialogEditAddressComponent } from './dialog-edit-address/dialog-edit-address.component';
 import { DialogEditUserComponent } from './dialog-edit-user/dialog-edit-user.component';
-import { ReactiveFormsModule } from '@angular/forms'; 
+import { ReactiveFormsModule } from '@angular/forms';
+import { AddTodoComponent } from './_todo/add-todo/add-todo.component';
+import { EditTodoComponent } from './_todo/edit-todo/edit-todo.component';
+import { TodoComponent } from './_todo/todo/todo.component'; 
+import { DragulaModule } from 'ng2-dragula';
+
+
 
 
 @NgModule({
@@ -42,10 +48,14 @@ import { ReactiveFormsModule } from '@angular/forms';
     DialogAddUserComponent,
     UserDetailComponent,
     DialogEditAddressComponent,
-    DialogEditUserComponent
+    DialogEditUserComponent,
+    AddTodoComponent,
+    EditTodoComponent,
+    TodoComponent
   ],
   imports: [
     BrowserModule,
+    DragulaModule.forRoot(),
     AppRoutingModule,
     BrowserAnimationsModule,
     MatToolbarModule,

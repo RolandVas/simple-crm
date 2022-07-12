@@ -1,0 +1,27 @@
+<form [formGroup]="addToDo">
+    <div class="dialog-container">
+
+        <h1 mat-dialog-title>Add To Do</h1>
+        <div mat-dialog-content>
+
+
+
+            <mat-form-field class="mr-r16" appearance="outline">
+                <mat-label>Add Task</mat-label>
+                <input  formControlName="task"  name="task" [(ngModel)]="ToDo$.todo"
+                    matInput placeholder="Add Task">
+            </mat-form-field>
+
+
+
+
+
+        </div>
+        <div mat-dialog-actions>
+            <button (click)="dialogRef.close();" mat-button>Cancel</button>
+            <button type="submit" mat-button (click)="saveTodo()"
+                cdkFocusInitial>Save</button>
+        </div>
+    </div>
+
+</form>

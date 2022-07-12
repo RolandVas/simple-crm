@@ -1,0 +1,35 @@
+.list-view {
+    display: flex;
+    justify-content: space-around;
+}
+
+mat-card {
+    
+}
+
+.todo-title {
+    background-color: rgb(80, 80, 219);
+}
+
+.doing-title {
+    background-color: goldenrod;
+}
+
+.done-title {
+    background-color: green;
+}
+
+.mg-top-16 {
+    margin-top: 16px;
+}
+
+.wd30 {
+    width: 30%;
+}
+
+.add-todo-btn {
+    position: absolute;
+    right: 56px;
+    bottom: 56px;
+}
+
